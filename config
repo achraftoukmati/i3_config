@@ -1,0 +1,48 @@
+# i3 config file
+
+# Set mod key to Win key
+set $mod Mod4
+
+# Use Mouse+Mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Font for window titles
+font pango:monospace 8
+
+# Start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Split in horizontal orientation
+bindsym $mod+Shift+space split h
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session)
+bindsym $mod+Shift+r restart
+
+# Exit i3
+bindsym $mod+Shift+e exit
+
+# Start i3bar to display a workspace bar (plus the system information i3status)
+bar {
+    status_command i3status
+}

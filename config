@@ -149,7 +149,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 
 exec --no-startup-id feh --bg-scale wallpaper.jpg
-
+exec --no-startup-id bash touch_enable.sh
 # finds out, if available)
 bar {
         status_command i3status

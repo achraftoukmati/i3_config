@@ -112,7 +112,7 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+# exec "xautolock -detectsleep -time 500 -locker \"i3lock -c 000000\""
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -147,9 +147,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
-
-exec --no-startup-id feh --bg-scale wallpaper.jpg
-exec --no-startup-id bash touch_enable.sh
+exec --no-startup-id picom
+exec --no-startup-id "feh --bg-scale ~/.config/i3/wallpaper.jpg"
+exec --no-startup-id "bash ~/.config/i3/touch_enable.sh"
 # finds out, if available)
 bar {
         status_command i3status

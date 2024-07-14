@@ -148,9 +148,13 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 exec --no-startup-id picom
-exec --no-startup-id "feh --bg-scale ~/.config/i3/wallpaper.jpg"
+exec --no-startup-id "feh --bg-scale ~/.config/i3/pxfuel.jpg"
 exec --no-startup-id "bash ~/.config/i3/touch_enable.sh"
-# finds out, if available)
+
+
+
+#bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10' -p 'dmenu prompt &gt;'"
+# finds out, if available):
 bar {
         status_command i3status
 }

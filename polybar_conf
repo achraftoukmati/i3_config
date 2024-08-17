@@ -1,0 +1,97 @@
+[colors]
+background = #0f0f0f
+foreground = #d3d3d3
+primary = #d3d3d3
+secondary = #ff00ff
+alert = #ff0000
+
+[bar/mybar]
+width = 100%
+height = 30
+background = ${colors.background}
+foreground = ${colors.foreground}
+font-0 = "Hack:size=10;weight=bold"
+font-1 = "FontAwesome:size=10"
+modules-left = i3
+modules-center = date
+modules-right = cpu memory battery volume network
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+label-mode-padding = 2
+label-mode-foreground = ${colors.primary}
+label-focused = %name%
+label-focused-background = ${colors.primary}
+label-focused-foreground = ${colors.background}
+label-unfocused = %name%
+label-unfocused-foreground = ${colors.foreground}
+label-visible = %name%
+label-visible-foreground = ${colors.foreground}
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.background}
+
+[module/date]
+type = internal/date
+interval = 1
+date = %Y-%m-%d %H:%M:%S
+date-alt = %a %b %d, %H:%M:%S
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+format-underline = ${colors.alert}
+format-underline-size = 2
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+format-charging = <animation-charging> <label>
+format-discharging = <ramp-capacity> <label>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-3 = " "
+
+[module/volume]
+type = internal/volume
+format-volume = <label-volume>
+label-volume = %percentage%%
+label-muted = "Muted"
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.alert}
+format-volume-prefix = " "
+format-volume-prefix-foreground = ${colors.primary}
+
+[module/network]
+type = internal/network
+interface = wlan0
+interval = 3
+format-connected = <label-connected>
+label-connected = %essid% %ip%
+format-disconnected = <label-disconnected>
+label-disconnected = "Disconnected"
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.primary}
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.alert}
